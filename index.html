@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jana Wall | Fotografie</title>
+  <link rel="icon" type="bilder/icon" href="/bootstrap/bilder/icon2.jpg">
+
+  <!-- Bootstrap CSS lokal -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Eigenes CSS -->
+  <link rel="stylesheet" href="style.css">
+  <icon ></icon>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Jana Wall | Fotografie</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Über mich</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Fotos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Leistungen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="bootstrap/videos/hero.mp4" type="video/mp4">
+      Dein Browser unterstützt dieses Video nicht.
+    </video>
+    <div class="hero-overlay">
+      <h1>ZEITLOS · AUTHENTISCH · UNVERGESSERLICH</h1>
+      <p>PORTRAIT & WEDDING PHOTOGRAPHER
+        storytelling in Bremen, Hannover, Hamburg & beyond.
+        BOOKINGS OPEN FOR LATE 2025 + 2026</p>
+    </div>
+  </section>
+
+  <!-- Über mich -->
+  <section id="about" class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="bootstrap/bilder/about.jpg" class="img-fluid rounded" alt="Über mich">
+      </div>
+      <div class="col-md-6">
+        <h2>Über mich</h2>
+        <p>Ich bin leidenschaftliche Fotografin, spezialisiert darauf, Emotionen und Geschichten in Bildern einzufangen. </p>
+        <a href="#contact" class="btn btn-outline-dark">Mehr erfahren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie Slider -->
+  <section id="gallery" class="gallery py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Meine Arbeiten</h2>
+
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <!-- Bilder werden per JS eingefügt -->
+        </div>
+
+        <!-- Pfeile -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Zurück</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Weiter</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="services" class="container py-5">
+    <h2 class="text-center mb-5">Leistungen</h2>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <h4>Hochzeitsreportage</h4>
+        <p>Authentische Momentaufnahmen für den schönsten Tag eures Lebens.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h4>Film</h4>
+        <p>Bewegte Bilder, die Emotionen für immer festhalten.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h4>Business</h4>
+        <p>Professionelle Portraits und Unternehmensfotografie für starke Markenauftritte.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-5">Kontakt</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-Mail</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Nachricht</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row gx-5 gy-5">
+      <!-- Brand -->
+      <div class="col-md-4">
+        <h3 class="footer-brand">Jana Wall</h3>
+        <p class="footer-subtitle">Hochzeitsfotografie</p>
+        <p class="footer-desc">
+          Ästhetische und emotionale Hochzeitsfotografie und -Videografie 
+          für Paare, die das Besondere schätzen.
+        </p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="col-md-4">
+        <h4 class="footer-title">NAVIGATION</h4>
+        <ul class="footer-links list-unstyled">
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#gallery">Portfolio</a></li>
+          <li><a href="#services">Leistungen</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+          <li><a href="impressum.html" target="_blank">Impressum</a></li> <!-- Neu -->
+          <li><a href="#">Datenschutz</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="col-md-4">
+        <h4 class="footer-title">KONTAKT</h4>
+        <p><strong>Email:</strong> <a href="mailto:JanaWall@Fotografie.de">JanaWall@Fotografie.de</a></p>
+        <p><strong>Telefon:</strong> <a href="tel:+491234567890">+49 123 456 7890</a></p>
+        <p><strong>Adresse:</strong> Niedersachsen, Deutschland</p>
+        <div class="footer-social mt-3">
+          <div class="footer-social mt-3">
+            <a href="https://www.instagram.com/janawallfotografie/" target="_blank" class="social-btn" aria-label="Instagram">
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/p/Jana-Wall-Fotografie-100051923774146/" target="_blank" class="social-btn" aria-label="Facebook">
+              Facebook
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Fooster Unten Anzeige -->
+    <div class="footer-bottom text-center mt-4 pt-3 border-top">
+      <p>© 2025 Jana Wall Fotografie. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- Bootstrap JS lokal -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Carousel JS -->
+  <script>
+    const bilder = [
+      'bootstrap/bilder/arbeit1.jpg',
+      'bootstrap/bilder/arbeit2.jpg',
+      'bootstrap/bilder/arbeit3.jpg',
+      'bootstrap/bilder/arbeit4.jpg',
+      'bootstrap/bilder/arbeit5.jpg',
+      'bootstrap/bilder/arbeit6.jpg',
+
+    ];
+
+    const carouselInner = document.getElementById('carouselInner');
+    const chunkSize = 3; // 3 Bilder pro Slide
+
+    for (let i = 0; i < bilder.length; i += chunkSize) {
+      const chunk = bilder.slice(i, i + chunkSize);
+      const carouselItem = document.createElement('div');
+      carouselItem.classList.add('carousel-item');
+      if (i === 0) carouselItem.classList.add('active');
+
+      const row = document.createElement('div');
+      row.className = 'row';
+
+      chunk.forEach(src => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4';
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Galerie Bild";
+        img.className = 'gallery-img';
+        col.appendChild(img);
+        row.appendChild(col);
+      });
+
+      carouselItem.appendChild(row);
+      carouselInner.appendChild(carouselItem);
+    }
+  </script>
+
+<!--Script für Navbar Animation-->
+<script>
+  const navbar = document.querySelector('.navbar');
+  
+  const standardPadding = 16; // in px, entspricht 1rem
+  const maxPadding = 26;      // größte Höhe beim Scrollen nach unten
+  const minPadding = 10;      // kleinste Höhe beim Scrollen nach oben
+  
+  let lastScrollY = window.scrollY;
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+  
+    // Scroll nach unten → größer
+    if (currentScroll > lastScrollY) {
+      let newPadding = standardPadding + (currentScroll / 20); // Skalierung
+      if(newPadding > maxPadding) newPadding = maxPadding;
+      navbar.style.padding = newPadding + "px 0";
+    } 
+    // Scroll nach oben → kleiner
+    else {
+      let newPadding = standardPadding - ((standardPadding - minPadding) * (currentScroll / 50));
+      if(newPadding < minPadding) newPadding = minPadding;
+      navbar.style.padding = newPadding + "px 0";
+    }
+  
+    // Wenn Scroll stoppt → zurück zur Standardhöhe
+    clearTimeout(window.navbarTimeout);
+    window.navbarTimeout = setTimeout(() => {
+      navbar.style.padding = standardPadding + "px 0";
+    }, 250); // 150ms nach Stillstand zurück animieren
+  
+    lastScrollY = currentScroll;
+  });
+  </script>
+  
+
+  <!--Scroll to 0 -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+
+</body>
+</html>
