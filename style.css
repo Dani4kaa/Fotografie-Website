@@ -63,11 +63,75 @@ header.bg-beige {
   color: var(--hellgrau);
 }
 
-/* HERO mit Video */
+/*Slideshow Hero */
 .hero {
   position: relative;
   overflow: hidden;
-  height: 90vh; /* Höhe des Bereichs */
+  height: 90vh;
+}
+
+/* Slideshow Container */
+.hero-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* hinter Text */
+}
+
+/* Alle Bilder übereinander legen */
+.hero-slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideshow 20s infinite;
+}
+
+/* Zeitversatz pro Bild */
+.hero-slideshow img:nth-child(1) { animation-delay: 0s; }
+.hero-slideshow img:nth-child(2) { animation-delay: 5s; }
+.hero-slideshow img:nth-child(3) { animation-delay: 10s; }
+.hero-slideshow img:nth-child(4) { animation-delay: 15s; }
+
+/* Keyframes für Fade-in / Fade-out */
+@keyframes slideshow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Text darüber */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  text-align: center;
+  z-index: 1; /* vor Slideshow */
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  padding: 40px;
+}
+
+
+
+
+
+/* HERO mit Video 
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 90vh; /* Höhe des Bereichs 
 }
 .hero-video {
   position: absolute;
@@ -86,13 +150,13 @@ header.bg-beige {
   color: var(--weiss);
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
   text-align: center;
-  z-index: 1; /* Overlay über Video */
+  z-index: 1; /* Overlay über Video 
 }
 .hero-overlay h1 {
   font-size: 3rem;
   letter-spacing: 2px;
   padding: 40px;
-}
+} */
 
 /* Galerie */
 .gallery-img {
@@ -231,6 +295,12 @@ header.bg-beige {
     letter-spacing: 1px;
     padding: 20px; /* weniger Padding */
   }
+
+  @media (max-width: 768px) {
+    .hero { height: 60vh; }
+    .hero-overlay h1 { font-size: 2rem; padding:20px; }
+    .hero-overlay p { font-size: 1rem; }
+  }  
 
   .hero-overlay p {
     font-size: 1rem;
