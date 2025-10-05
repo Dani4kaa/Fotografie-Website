@@ -195,3 +195,17 @@ if (submitFeedback) {
     highlightStars(0);
   });
 }
+
+// FEEDBACK SLIDER
+const feedbackItems = document.querySelectorAll('#feedbackList .feedback-item');
+let currentIndex = 0;
+
+function showNextFeedback() {
+  currentIndex++;
+  if (currentIndex >= feedbackItems.length) currentIndex = 0;
+  const offset = -currentIndex * 120; // Höhe der einzelnen Items
+  document.getElementById('feedbackList').style.transform = `translateY(${offset}px)`;
+}
+
+// Automatisch alle 4 Sekunden wechseln
+setInterval(showNextFeedback, 4000);

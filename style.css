@@ -5,6 +5,7 @@
   --hellgrau: #888888;
 }
 
+/* ================= BODY ================= */
 body {
   background-color: var(--weiss);
   color: var(--dunkelgrau);
@@ -13,7 +14,7 @@ body {
   padding-top: 0;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER / NAVBAR ================= */
 .custom-header {
   width: 100%;
   z-index: 100;
@@ -22,8 +23,6 @@ body {
 .navbar {
   padding: 10px 0;
   transition: padding 0.3s ease;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
-  backdrop-filter: blur(3px); /*Wie stark blur ist */
 }
 
 .logo-img {
@@ -31,17 +30,33 @@ body {
   width: 250px;
 }
 
-/* Navbar Links */
+/* Navbar Links (auch im Burger-Menü) */
 .nav-link {
   color: #fff !important;
   font-weight: 600;
   margin-left: 1rem;
   transition: transform 0.2s ease;
- 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* schwarzer Schatten für weiße Schrift */
 }
 
 .nav-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+}
+
+/* Burger Menü */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  color: transparent;
+  position: relative;
+  z-index: 15; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* leichter Schatten */
+  border-radius: 8px; 
+  padding: 6px;
+}
+
+.navbar-toggler-icon {
+  /* Standard Bootstrap Icon bleibt */
 }
 
 /* ================= HERO ================= */
@@ -50,6 +65,24 @@ body {
   overflow: hidden;
   height: 100vh;
   z-index: 0;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  z-index: 10;
+}
+
+.hero-logo img {
+  width: 200px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.hero-logo img:hover {
+  transform: scale(1.05);
 }
 
 .hero-slideshow img {
@@ -74,8 +107,6 @@ body {
 .hero-slideshow img:nth-child(11){ animation-delay: 60s; }
 .hero-slideshow img:nth-child(12){ animation-delay: 66s; }
 .hero-slideshow img:nth-child(13){ animation-delay: 72s; }
-
-
 
 @keyframes slideshow {
   0% { opacity: 0; }
@@ -106,8 +137,8 @@ body {
 .hero-overlay p {
   font-size: 1.4rem;
   font-weight: 550;
-  line-height: 0;
-  font-family: Georgia, serif;;
+  line-height: 1;
+  font-family: Georgia, serif;
 }
 
 /* ================= ÜBER MICH ================= */
@@ -141,10 +172,10 @@ body {
   line-height: 1.4;
 }
 
-/* ================= GALERIE (hochformat/quadratisch) ================= */
+/* ================= GALERIE ================= */
 .gallery-img {
   width: 100%;
-  aspect-ratio: 3 / 5; /* Hochformat */
+  aspect-ratio: 3 / 5;
   object-fit: cover;
   border-radius: 3px;
   transition: transform 0.4s ease;
@@ -155,8 +186,8 @@ body {
 }
 
 .carousel-inner img {
-  width: 90%; /*Breite einstelle zwischen Caroussel*/
-  aspect-ratio: 3 / 5; /* Hochformat */
+  width: 90%;
+  aspect-ratio: 3 / 5;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.4s ease;
@@ -166,10 +197,9 @@ body {
   transform: scale(1.05);
 }
 
-/* Carousel Spalten kleiner Abstand */
 .carousel-item .col-md-4 {
-  padding: 0px;
-  margin: 0px; /* kleiner Abstand */
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,44 +215,32 @@ body {
   margin-bottom: 2rem;
 }
 
-/* ================= Bürger Navbar ========== */
-.navbar-toggler {
-  border: none;          /* entfernt den Rahmen */
-  background: transparent; /* entfernt die Hintergrundfarbe */
-  color: transparent;
-
-
-  /* ====== Burger-Menü weiß färben ====== */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
+/* ================= FEEDBACK ================= */
+.feedback-slider {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
 
-/* ================= Feedback =============== */
-/* Sterne Bewertung */
-.star-rating {
-  font-size: 2rem;
-  color: #ccc;
-  cursor: pointer;
+.feedback-item {
+  display: none; /* nur ein Feedback sichtbar */
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1rem;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.star-rating .star.filled {
-  color: #f5c518; /* goldene Sterne */
+.feedback-item p {
+  margin-bottom: 0.5rem;
 }
 
-.feedback-list ul {
-  padding: 0;
-  list-style: none;
+.feedback-item strong {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.3rem;
 }
-
-.feedback-list li {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-
 
 
 /* ================= FOOTER ================= */
@@ -231,6 +249,7 @@ body {
   color: #fff;
   padding: 60px 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 .footer-custom a {
@@ -243,100 +262,10 @@ body {
   color: #fff;
 }
 
-.footer-brand {
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  margin-bottom: 0.3rem;
-}
-
-.footer-subtitle {
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  opacity: 0.6;
-  margin-bottom: 1rem;
-}
-
-.footer-desc {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  opacity: 0.7;
-}
-
-.footer-title {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
-
-.footer-links li { margin-bottom: 0.5rem; }
-
-.footer-social .social-btn {
-  display: inline-block;
-  background-color: rgba(255,255,255,0.1);
-  padding: 8px 12px;
-  margin-right: 8px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  transition: all 0.3s;
-}
-
-.footer-social .social-btn:hover {
-  background-color: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
-}
-
 .footer-bottom {
   font-size: 0.75rem;
   opacity: 0.5;
-  text-align: center;
-}
-
-
-/* ================= DATENSCHUTZ SEITE (eigene Anpassungen) ================= */
-body.datenschutz-page .navbar {
-  padding: 10px 0;
-  transition: padding 0.3s ease;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
-  backdrop-filter: blur(3px); /*Wie stark blur ist */
-}
-
-body.datenschutz-page .nav-link {
-  color: #000 !important; /* schwarze Schrift */
-}
-
-body.datenschutz-page .nav-link:hover {
-  color: #444 !important; /* dunkleres Grau beim Hover */
-}
-
-/* Schwarz für Datenschutz-Seite */
-body.datenschutz-page .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-/* ================= Impressum SEITE (eigene Anpassungen) ================= */
-body.impressum-page .navbar {
-  padding: 10px 0;
-  transition: padding 0.3s ease;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
-  backdrop-filter: blur(3px); /*Wie stark blur ist */
-}
-
-body.impressum-page .nav-link {
-  color: #000 !important; /* schwarze Schrift */
-}
-
-body.impressum-page .nav-link:hover {
-  color: #444 !important; /* dunkleres Grau beim Hover */
-}
-
-body.impressum-page h1{
-  text-align: center;
-  margin-top: 120px;
-}
-
-/* Schwarz für Datenschutz-Seite */
-body.impressum-page .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  margin-top: 1rem;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -384,4 +313,15 @@ body.impressum-page .navbar-toggler-icon {
 @media (max-width: 480px) {
   .hero-overlay h1 { font-size: 1.5rem; }
   .hero-overlay p { font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    top: 15px;
+    left: 20px;
+  }
+
+  .hero-logo img {
+    width: 150px;
+  }
 }
