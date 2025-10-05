@@ -8,7 +8,7 @@
 
 - Cookies  / Done 
 
-- DSGVO  
+- DSGVO  /Done
 
 - Fotos bei Galerie hochkant  /Done
 
