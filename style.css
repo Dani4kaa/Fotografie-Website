@@ -219,29 +219,26 @@ body {
 .feedback-slider {
   max-width: 600px;
   margin: 0 auto;
-  text-align: center;
-  position: relative;
+  overflow: hidden;
+  height: 120px;
+}
+
+#feedbackList {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
 }
 
 .feedback-item {
-  display: none; /* nur ein Feedback sichtbar */
-  font-size: 1.2rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
   font-style: italic;
-  color: #333;
-  margin-bottom: 1rem;
-  transition: opacity 0.5s ease-in-out;
+  font-size: 1rem;
 }
-
-.feedback-item p {
-  margin-bottom: 0.5rem;
-}
-
-.feedback-item strong {
-  display: block;
-  font-weight: bold;
-  margin-top: 0.3rem;
-}
-
 
 /* ================= FOOTER ================= */
 .footer-custom {

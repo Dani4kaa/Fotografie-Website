@@ -1,7 +1,6 @@
 // js/feedback.js
 const feedbacks = [
-  { name: "Anna S.", text: "Wunderschöne Fotos, wir sind begeistert!" },
-  { name: "Max M.", text: "Sehr professionelle Fotografin und tolle Ideen." },
-  { name: "Laura K.", text: "Die Hochzeitserinnerungen sind einfach perfekt festgehalten!" },
-  { name: "Nina L.", text: "Unglaublich schöne Fotos und sehr sympathische Fotografin!" }
+  { name: "Anna S.", text: "Die Fotos waren einfach traumhaft! Absolute Empfehlung." },
+  { name: "Max K.", text: "Professionell, freundlich und super kreativ." },
+  { name: "Lisa & Tom", text: "Wir könnten nicht glücklicher mit unseren Hochzeitsfotos sein." }
 ];

@@ -35,20 +35,12 @@
     <div class="hero-logo">
       <img src="bootstrap/bilder/logoneu.png" alt="Jana Wall Fotografie Logo">
     </div>
-<div class="hero-slideshow"> 
-  <img src="bootstrap/bilder/Hero/hero1.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero3.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero4.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero5.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero6.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero7.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero8.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero9.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero10.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero11.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero12.jpg" alt="">
-  <img src="bootstrap/bilder/Hero/hero13.jpg" alt=""> </div>
+    <div class="hero-slideshow">
+      <img src="bootstrap/bilder/Hero/hero1.jpg" alt="">
+      <img src="bootstrap/bilder/Hero/hero.jpg" alt="">
+      <img src="bootstrap/bilder/Hero/hero3.jpg" alt="">
+      <!-- weitere Bilder hier -->
+    </div>
     <div class="hero-overlay">
       <h1>EURE ERINNERUNGEN<br>FÜR IMMER FESTGEHALTEN</h1>
       <p>authentisch & zeitlos</p>
@@ -85,53 +77,22 @@
     </div>
   </section>
 
-
-<!-- Feedback Section -->
-<section id="Feedback" class="container py-5">
-  <div class="container">
+  <!-- FEEDBACK -->
+  <section id="Feedback" class="container py-5">
     <h2 class="text-center mb-5">Feedback</h2>
     <div class="feedback-slider">
       <ul id="feedbackList">
-        <!-- Feedbacks werden per JS eingefügt -->
       </ul>
     </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- KONTAKT -->
   <section id="contact" class="container py-5">
     <h2 class="text-center mb-5">Kontakt</h2>
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form action="https://formsubmit.co" method="POST" id="kontaktForm">
+        <form action="https://formsubmit.co" method="POST">
           <input type="hidden" name="_next" value="https://dani4kaa.github.io/Fotografie-Website/#contact">
-          <input type="hidden" name="_to" id="encryptedMail">
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="vorname" class="form-label">Vorname</label>
-              <input type="text" class="form-control" name="vorname" id="vorname" required>
-            </div>
-            <div class="col-md-6">
-              <label for="nachname" class="form-label">Nachname</label>
-              <input type="text" class="form-control" name="nachname" id="nachname" required>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="wunschdatum" class="form-label">Wunschdatum</label>
-              <input type="date" class="form-control" name="wunschdatum" id="wunschdatum" required>
-            </div>
-            <div class="col-md-6">
-              <label for="wunschort" class="form-label">Wunschort</label>
-              <input type="text" class="form-control" name="wunschort" id="wunschort" required>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">E-Mail</label>
-            <input type="email" class="form-control" name="email" id="email" required>
-          </div>
           <div class="mb-3">
             <label for="message" class="form-label">Nachricht</label>
             <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
@@ -142,42 +103,10 @@
     </div>
   </section>
 
-  
-<!-- FOOTER -->
+  <!-- FOOTER -->
   <footer class="footer-custom">
-    <div class="container">
-      <div class="row gx-5 gy-5">
-        <div class="col-md-4">
-          <h3 class="footer-brand">Jana Wall</h3>
-          <p class="footer-subtitle">Hochzeitsfotografie</p>
-          <p class="footer-desc">Ästhetische und emotionale Hochzeitsfotografie und -Videografie für Paare, die das Besondere schätzen.</p>
-        </div>
-        <div class="col-md-4">
-          <h4 class="footer-title">NAVIGATION</h4>
-          <ul class="footer-links list-unstyled">
-            <li><a href="#about">Über mich</a></li>
-            <li><a href="#gallery">Galerie</a></li>
-            <li><a href="#services">Leistungen</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h4 class="footer-title">KONTAKT</h4>
-          <p><strong>Email:</strong> <a id="footerEmail" href="#">E-Mail</a></p>
-          <p><strong>Telefon:</strong> <a href="tel:+491234567890">+49 123 456 7890</a></p>
-          <p><strong>Adresse:</strong> Niedersachsen, Deutschland</p>
-          <div class="footer-social mt-3">
-            <a href="https://www.instagram.com/janawallfotografie/" target="_blank" class="social-btn">Instagram</a>
-            <a href="https://www.facebook.com/p/Jana-Wall-Fotografie-100051923774146/" target="_blank" class="social-btn">Facebook</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom text-center mt-4 pt-3 border-top">
-        <p>© 2025 Jana Wall Fotografie. Alle Rechte vorbehalten.</p>
-        <p><a href="datenschutz.html">Datenschutzerklärung</a></p>
-      </div>
+    <div class="container text-center">
+      <p>© 2025 Jana Wall Fotografie. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 

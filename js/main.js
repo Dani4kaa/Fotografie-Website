@@ -209,3 +209,4 @@ function showNextFeedback() {
 
 // Automatisch alle 4 Sekunden wechseln
 setInterval(showNextFeedback, 4000);
+
