@@ -8,72 +8,98 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Eigenes CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="datenschutz-page">
 
   <!-- HEADER -->
   <header class="custom-header">
-    <a href="index.html">
-      <img src="bootstrap/bilder/logoneublack.png" alt="Jana Wall Fotografie Logo" class="logo-img">
-    </a>
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">Über mich</a></li>
-        <li><a href="index.html#gallery">Fotos</a></li>
-        <li><a href="index.html#services">Leistungen</a></li>
-        <li><a href="index.html#contact">Kontakt</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-      </ul>
+    <nav class="navbar fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="bootstrap/bilder/logoneublack.png" alt="Jana Wall Fotografie Logo" class="logo-img">
+        </a>
+
+        <!-- Burger Menü -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menü Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#about">Über mich</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#gallery">Galerie</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#services">Leistungen</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <!-- Datenschutz Inhalt -->
-  <main class="container py-5" style="margin-top:100px;">
-    <h1 class="mb-4">Datenschutzerklärung</h1>
+  <!-- DATENSCHUTZ INHALT -->
+  <main class="container py-5" style="margin-top:120px;">
+    <h1>Datenschutzerklärung</h1>
 
     <p>Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-    <p><strong>Jana Wall Fotografie</strong><br>
-       Niedersachsen, Deutschland<br>
-       E-Mail: <a href="mailto:JanaWall@Fotografie.de">JanaWall@Fotografie.de</a></p>
+    <p>
+      <strong>Jana Wall Fotografie</strong><br>
+      Niedersachsen, Deutschland<br>
+      E-Mail: <a href="mailto:JanaWall@Fotografie.de">JanaWall@Fotografie.de</a>
+    </p>
 
     <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
-    <p>Wenn Sie uns per Kontaktformular Anfragen zusenden, werden Ihre angegebenen Daten (z.B. Name, E-Mail-Adresse, Nachricht) gespeichert, um Ihre Anfrage zu bearbeiten. Eine Weitergabe an Dritte erfolgt nicht ohne Ihre Einwilligung.</p>
+    <p>Personenbezogene Daten werden nur erhoben, wenn Sie uns diese freiwillig mitteilen, z. B. im Kontaktformular oder bei Anfragen. Dies umfasst:</p>
+    <ul>
+      <li>Name</li>
+      <li>E-Mail-Adresse</li>
+      <li>Nachrichtentext</li>
+    </ul>
+    <p>Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
+    <p>Die Speicherung erfolgt <strong>für die Dauer der Bearbeitung Ihrer Anfrage</strong>. Danach werden die Daten gelöscht, soweit keine gesetzliche Aufbewahrungspflicht besteht.</p>
 
-    <h2>3. Nutzung von FormSubmit</h2>
-    <p>Die Kontaktanfragen werden über <a href="https://formsubmit.co" target="_blank">FormSubmit</a> versendet. Dabei gelten die Datenschutzbestimmungen von FormSubmit. Ihre Daten werden ausschließlich für die Bearbeitung Ihrer Anfrage genutzt.</p>
+    <h2>3. Rechtsgrundlage</h2>
+    <p>Die Verarbeitung der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse), soweit erforderlich für die Funktionsfähigkeit der Website.</p>
 
-    <h2>4. Cookies</h2>
-    <p>Unsere Website verwendet keine Cookies zur Personalisierung. Für Funktionalitäten von Drittanbietern können Cookies gesetzt werden. Sie können diese in Ihrem Browser jederzeit deaktivieren.</p>
+    <h2>4. Nutzung von FormSubmit</h2>
+    <p>Die Kontaktanfragen werden über <a href="https://formsubmit.co" target="_blank" rel="noopener">FormSubmit</a> verarbeitet. Dabei gilt deren Datenschutzrichtlinie: Ihre Daten werden ausschließlich zum Versand der Nachricht genutzt. Die Daten werden <strong>in der EU bzw. nach Angabe von FormSubmit</strong> verarbeitet.</p>
+    <p>FormSubmit ist unser Auftragsverarbeiter. Ein Auftragsverarbeitungsvertrag (AVV) liegt vor.</p>
 
-    <h2>5. Webanalyse</h2>
-    <p>Derzeit verwenden wir keine Tracking- oder Analyse-Tools, die personenbezogene Daten auswerten.</p>
+    <h2>5. Cookies</h2>
+    <p>Auf dieser Website werden derzeit keine Cookies zur Speicherung personenbezogener Daten oder für Tracking/Marketing eingesetzt. Technisch notwendige Cookies, z. B. für die Funktionsfähigkeit des Kontaktformulars oder der Navigation, werden ggf. automatisch gesetzt, enthalten aber keine personenbezogenen Daten.</p>
 
-    <h2>6. Ihre Rechte</h2>
-    <p>Sie haben jederzeit das Recht:</p>
+    <h2>6. Webanalyse und Social Plugins</h2>
+    <p>Derzeit verwenden wir keine Tracking- oder Analyse-Tools wie Google Analytics oder Social Media Plugins, die personenbezogene Daten auswerten.</p>
+
+    <h2>7. Datensicherheit</h2>
+    <p>Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten vor Verlust, Manipulation und unberechtigtem Zugriff zu schützen.</p>
+
+    <h2>8. Ihre Rechte</h2>
+    <p>Sie haben das Recht:</p>
     <ul>
       <li>Auskunft über die zu Ihrer Person gespeicherten Daten zu erhalten,</li>
       <li>Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten zu verlangen,</li>
-      <li>Ihre Einwilligung zur Datenverarbeitung zu widerrufen,</li>
+      <li>Ihre Einwilligung zur Datenverarbeitung jederzeit zu widerrufen,</li>
       <li>Beschwerde bei einer Aufsichtsbehörde einzureichen.</li>
     </ul>
 
-    <h2>7. Änderungen der Datenschutzerklärung</h2>
+    <h2>9. Änderungen der Datenschutzerklärung</h2>
     <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Die jeweils aktuelle Version ist auf unserer Website verfügbar.</p>
 
-    <p>Stand: Oktober 2025</p>
+    <p><strong>Stand:</strong> Oktober 2025</p>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer-custom">
     <div class="container text-center py-4">
       <p>© 2025 Jana Wall Fotografie. Alle Rechte vorbehalten.</p>
-      <p><a href="#impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+      <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
     </div>
   </footer>
 

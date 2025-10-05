@@ -9,48 +9,38 @@ body {
   background-color: var(--weiss);
   color: var(--dunkelgrau);
   font-family: Georgia, serif;
-  padding-top: 0;
   margin: 0;
+  padding-top: 0;
 }
 
 /* ================= HEADER ================= */
 .custom-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 1rem 2rem;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0));
-  backdrop-filter: blur(5px);
-  height: 65px;
+  z-index: 100;
 }
 
-.custom-header .logo-img {
-  height: 65px;
-  width: auto;
+.navbar {
+  padding: 10px 0;
+  transition: padding 0.3s ease;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
+  backdrop-filter: blur(3px); /*Wie stark blur ist */
 }
 
-.header-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 2rem;
+.logo-img {
+  height: 35px;
+  width: 250px;
 }
 
-.header-nav a {
-  color: #fff;
+/* Navbar Links */
+.nav-link {
+  color: #fff !important;
   font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
+  margin-left: 1rem;
   transition: transform 0.2s ease;
+ 
 }
 
-.header-nav a:hover {
+.nav-link:hover {
   transform: scale(1.05);
 }
 
@@ -59,16 +49,6 @@ body {
   position: relative;
   overflow: hidden;
   height: 100vh;
-  margin-top: -40px;
-  z-index: 0;
-}
-
-.hero-slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 0;
 }
 
@@ -78,14 +58,24 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  animation: slideshow 20s infinite;
+  animation: slideshow 76s infinite;
 }
 
 .hero-slideshow img:nth-child(1) { animation-delay: 0s; }
-.hero-slideshow img:nth-child(2) { animation-delay: 5s; }
-.hero-slideshow img:nth-child(3) { animation-delay: 10s; }
-.hero-slideshow img:nth-child(4) { animation-delay: 15s; }
-.hero-slideshow img:nth-child(5) { animation-delay: 20s; }
+.hero-slideshow img:nth-child(2) { animation-delay: 6s; }
+.hero-slideshow img:nth-child(3) { animation-delay: 12s; }
+.hero-slideshow img:nth-child(4) { animation-delay: 18s; }
+.hero-slideshow img:nth-child(5) { animation-delay: 24s; }
+.hero-slideshow img:nth-child(6) { animation-delay: 30s; }
+.hero-slideshow img:nth-child(7) { animation-delay: 36s; }
+.hero-slideshow img:nth-child(8) { animation-delay: 42s; }
+.hero-slideshow img:nth-child(9) { animation-delay: 48s; }
+.hero-slideshow img:nth-child(10){ animation-delay: 54s; }
+.hero-slideshow img:nth-child(11){ animation-delay: 60s; }
+.hero-slideshow img:nth-child(12){ animation-delay: 66s; }
+.hero-slideshow img:nth-child(13){ animation-delay: 72s; }
+
+
 
 @keyframes slideshow {
   0% { opacity: 0; }
@@ -103,33 +93,42 @@ body {
   color: #fff;
   text-align: center;
   z-index: 1;
+  max-width: 90%;
 }
 
 .hero-overlay h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 1.2;
   letter-spacing: 2px;
-  padding: 40px;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.4rem;
+  font-weight: 550;
+  line-height: 0;
+  font-family: Georgia, serif;;
 }
 
 /* ================= ÜBER MICH ================= */
 .about-wrapper {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Abstand zwischen Bild und Text */
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
-  flex-wrap: wrap; /* für kleinere Screens */
+  flex-wrap: wrap;
 }
 
 .about-img {
-  width: 400px; /* Bild links */
+  width: 400px;
   border-radius: 10px;
   height: auto;
 }
 
 .about-text {
-  width: 60%; /* Text rechts neben dem Bild */
+  flex: 1;
 }
 
 .about-text h2 {
@@ -140,38 +139,14 @@ body {
 .about-text p {
   font-size: 1.2rem;
   line-height: 1.4;
-  margin-bottom: 1rem;
 }
 
-.about-text .btn {
-  margin-top: 20rem; /*Höhe der Überschrift Über mich */
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .about-wrapper {
-    flex-direction: column; /* Bild über Text auf kleineren Bildschirmen */
-    gap: 1rem;
-  }
-  .about-img, .about-text {
-    width: 100%;
-    text-align: center;
-  }
-  .about-text h2 {
-    font-size: 2rem;
-  }
-  .about-text p {
-    font-size: 1rem;
-  }
-}
-
-
-/* ================= GALERIE ================= */
+/* ================= GALERIE (hochformat/quadratisch) ================= */
 .gallery-img {
   width: 100%;
-  height: 250px;
+  aspect-ratio: 3 / 5; /* Hochformat */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 3px;
   transition: transform 0.4s ease;
 }
 
@@ -179,16 +154,9 @@ body {
   transform: scale(1.05);
 }
 
-.carousel-item .col-md-4 {
-  padding: 0 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .carousel-inner img {
-  width: 100%;
-  height: 300px;
+  width: 90%; /*Breite einstelle zwischen Caroussel*/
+  aspect-ratio: 3 / 5; /* Hochformat */
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.4s ease;
@@ -198,22 +166,14 @@ body {
   transform: scale(1.05);
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 40px;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.8;
+/* Carousel Spalten kleiner Abstand */
+.carousel-item .col-md-4 {
+  padding: 0px;
+  margin: 0px; /* kleiner Abstand */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 100%, 100%;
-}
-
-.carousel-control-prev { left: 10px; }
-.carousel-control-next { right: 10px; }
 
 /* ================= LEISTUNGEN ================= */
 #services h2 {
@@ -224,6 +184,46 @@ body {
 #contact h2 {
   margin-bottom: 2rem;
 }
+
+/* ================= Bürger Navbar ========== */
+.navbar-toggler {
+  border: none;          /* entfernt den Rahmen */
+  background: transparent; /* entfernt die Hintergrundfarbe */
+  color: transparent;
+
+
+  /* ====== Burger-Menü weiß färben ====== */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+}
+
+/* ================= Feedback =============== */
+/* Sterne Bewertung */
+.star-rating {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star-rating .star.filled {
+  color: #f5c518; /* goldene Sterne */
+}
+
+.feedback-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.feedback-list li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+
 
 /* ================= FOOTER ================= */
 .footer-custom {
@@ -239,7 +239,9 @@ body {
   transition: color 0.3s;
 }
 
-.footer-custom a:hover { color: #fff; }
+.footer-custom a:hover {
+  color: #fff;
+}
 
 .footer-brand {
   font-size: 1.8rem;
@@ -286,51 +288,100 @@ body {
 .footer-bottom {
   font-size: 0.75rem;
   opacity: 0.5;
+  text-align: center;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .hero { height: 60vh; }
-  .hero-overlay h1 { font-size: 2rem; padding: 20px; }
-  .hero-overlay p { font-size: 1rem; }
 
-  #about {
+/* ================= DATENSCHUTZ SEITE (eigene Anpassungen) ================= */
+body.datenschutz-page .navbar {
+  padding: 10px 0;
+  transition: padding 0.3s ease;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
+  backdrop-filter: blur(3px); /*Wie stark blur ist */
+}
+
+body.datenschutz-page .nav-link {
+  color: #000 !important; /* schwarze Schrift */
+}
+
+body.datenschutz-page .nav-link:hover {
+  color: #444 !important; /* dunkleres Grau beim Hover */
+}
+
+/* Schwarz für Datenschutz-Seite */
+body.datenschutz-page .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ================= Impressum SEITE (eigene Anpassungen) ================= */
+body.impressum-page .navbar {
+  padding: 10px 0;
+  transition: padding 0.3s ease;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
+  backdrop-filter: blur(3px); /*Wie stark blur ist */
+}
+
+body.impressum-page .nav-link {
+  color: #000 !important; /* schwarze Schrift */
+}
+
+body.impressum-page .nav-link:hover {
+  color: #444 !important; /* dunkleres Grau beim Hover */
+}
+
+body.impressum-page h1{
+  text-align: center;
+  margin-top: 120px;
+}
+
+/* Schwarz für Datenschutz-Seite */
+body.impressum-page .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .about-wrapper {
     flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
+    text-align: center;
     padding: 2rem 1rem;
   }
 
-  #about .about-img { width: 100%; }
-  #about .about-overlay {
-    max-width: 100%;
-    margin-top: -50px;
-    text-align: center;
+  .about-img {
+    width: 100%;
+    margin-bottom: 1rem;
   }
-  #about .about-overlay h2 { font-size: 2rem; }
-  #about .about-overlay p { font-size: 1rem; }
 
-  .carousel-inner img,
-  .gallery-img { height: 200px; }
+  .carousel-inner img {
+    aspect-ratio: 3 / 4;
+  }
+}
 
-  .footer-custom { text-align: center; padding: 40px 1rem; }
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .gallery-img, .carousel-inner img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .footer-custom {
+    text-align: center;
+    padding: 40px 1rem;
+  }
+
   .footer-custom .footer-brand { font-size: 1.5rem; }
   .footer-custom .footer-subtitle { font-size: 0.7rem; }
   .footer-custom .footer-desc,
   .footer-custom .footer-links li { font-size: 0.8rem; }
-  .footer-custom .footer-social .social-btn {
-    padding: 6px 10px;
-    font-size: 0.8rem;
-  }
 }
 
 @media (max-width: 480px) {
   .hero-overlay h1 { font-size: 1.5rem; }
   .hero-overlay p { font-size: 0.9rem; }
-
-  #about .about-overlay h2 { font-size: 1.5rem; }
-  #about .about-overlay p { font-size: 0.9rem; }
-
-  .carousel-inner img,
-  .gallery-img { height: 150px; }
 }

@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Galerie Bilder dynamisch laden
+  // ===================== EMAIL OBFSUCATION =====================
+  const formEncoded = "ZGFuaVdhMTIzNEB3ZWIuZGU="; // atob -> daniWa1234@web.de
+  const footerEncoded = "SmFuYVdhbGxARm90b2dyYXBoaWUuZGU="; // atob -> JanaWall@Fotografie.de
+
+  try {
+    const decodedFormMail = atob(formEncoded);
+    const decodedFooterMail = atob(footerEncoded);
+
+    // Formular-Ziel-E-Mail setzen
+    const encryptedMailInput = document.getElementById('encryptedMail');
+    if (encryptedMailInput) {
+      encryptedMailInput.value = decodedFormMail;
+    }
+
+    // Footer-Mail setzen
+    const footerEmailAnchor = document.getElementById('footerEmail');
+    if (footerEmailAnchor) {
+      footerEmailAnchor.href = 'mailto:' + decodedFooterMail;
+      footerEmailAnchor.textContent = decodedFooterMail;
+    }
+  } catch (e) {
+    console.error("Fehler beim Dekodieren der E-Mail:", e);
+  }
+
+  // ===================== GALERIE DYNAMISCH =====================
   const bilder = [
     'bootstrap/bilder/arbeit1.jpg',
     'bootstrap/bilder/arbeit2.jpg',
@@ -37,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Navbar Animation beim Scrollen
+  // ===================== NAVBAR ANIMATION =====================
   const navbar = document.querySelector('.navbar');
   if (navbar) {
-    const standardPadding = 16; // px
+    const standardPadding = 16;
     const maxPadding = 26;
     const minPadding = 10;
     let lastScrollY = window.scrollY;
@@ -67,9 +91,107 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Immer oben starten
+  // ===================== KONTAKTFORMULAR AJAX + RESET =====================
+  const kontaktForm = document.getElementById('kontaktForm');
+  if (kontaktForm) {
+    kontaktForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Normales Absenden verhindern
+
+      const formData = new FormData(kontaktForm);
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/' + formData.get('_to'), {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          alert("Vielen Danke! Deine Nachricht wurde gesendet. Ich melde mich in kürze bei euch");
+          kontaktForm.reset(); // Felder leeren
+        } else {
+          alert("Oops! Etwas ist schiefgelaufen.");
+        }
+      } catch (err) {
+        alert("Fehler beim Senden der Nachricht.");
+        console.error(err);
+      }
+    });
+  }
+
+  // ===================== SCROLL RESTORATION =====================
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
   window.scrollTo(0, 0);
 });
+
+// Navbar Bürger script schließen
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navbarCollapse.classList.contains('show')) {
+        // Bootstrap Collapse API
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: true
+        });
+      }
+    });
+  });
+});
+
+// ===================== FEEDBACK SYSTEM =====================
+const feedbackContainer = document.getElementById('feedbackContainer');
+const feedbackText = document.getElementById('feedbackText');
+const submitFeedback = document.getElementById('submitFeedback');
+const stars = document.querySelectorAll('.star-rating .star');
+let rating = 0;
+
+if (stars.length) {
+  stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+      highlightStars(star.dataset.value);
+    });
+    star.addEventListener('mouseout', () => {
+      highlightStars(rating);
+    });
+    star.addEventListener('click', () => {
+      rating = star.dataset.value;
+      highlightStars(rating);
+    });
+  });
+
+  function highlightStars(rating) {
+    stars.forEach(star => {
+      star.classList.toggle('filled', star.dataset.value <= rating);
+    });
+  }
+}
+
+if (submitFeedback) {
+  submitFeedback.addEventListener('click', () => {
+    const text = feedbackText.value.trim();
+    if (!text || rating == 0) {
+      alert('Bitte gebe eine Bewertung und Text ein!');
+      return;
+    }
+
+    const li = document.createElement('li');
+    li.className = 'list-group-item';
+    li.innerHTML = `
+      <div class="d-flex align-items-center mb-1">
+        ${'&#9733;'.repeat(rating)}${'&#9734;'.repeat(5 - rating)}
+      </div>
+      <p>${text}</p>
+    `;
+    feedbackContainer.prepend(li);
+
+    // Reset
+    feedbackText.value = '';
+    rating = 0;
+    highlightStars(0);
+  });
+}
