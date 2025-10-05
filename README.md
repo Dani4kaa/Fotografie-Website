@@ -1,19 +1,22 @@
-### Was gemacht werden muss noch
+# Fotografie website
+
+
+## Was gemacht werden muss noch
 
 - Insta Feed nach unten unter Kontakt  
 
-- Feedback Seite  /Done man muss schauen weil weil brauch server für speichern
-
-- Kontakt: Vorname, Nachname, Wunschdatum, Datum, Ort/Wo, persönliche Nachricht  /Done 
-
-- Cookies  / Done 
-
-- DSGVO  /Done
-
-- Fotos bei Galerie hochkant  /Done
-
-- Bürger-Menü, wenn Window kleiner wird  /Done 
+- Kontakt muss noch die email richtig gesetzt werden am ende!!!
 
 
 
-- Kontakt muss noch die email richtig gesetzt werden am ende
+
+### Gemacht wurde
+
+- Impressum, Datenschutz, Cookies
+
+- Hero Bilder
+
+- email verschlüsselt beim Kontakt Formualar
+
+- Feedback System (Demo) Geht nicht wirklich
+ 
