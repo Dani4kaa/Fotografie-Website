@@ -1,0 +1,15 @@
+name: Refresh Instagram Token
+
+on:
+  schedule:
+    - cron: "0 0 */30 * *"  # alle 30 Tage um Mitternacht
+  workflow_dispatch:        # manuell startbar
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Instagram Refresh API
+        run: |
+          curl -X GET "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${{ secrets.INSTAGRAM_TOKEN }}" -o response.json
+          echo "Token refreshed!"
