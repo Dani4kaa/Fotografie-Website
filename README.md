@@ -17,5 +17,3 @@
 
 
 - Kontakt muss noch die email richtig gesetzt werden am ende
-- PDF vollständig übernehmen
-- Lazy Loading hinzufügen bei den Unteren Bildern (Bilder laden erst nach dem diese in Sichtweite sind) 
